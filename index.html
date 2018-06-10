@@ -62,6 +62,92 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-十佳辅导员在线测评前端心得体会" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/10/十佳辅导员在线测评前端心得体会/" class="article-date">
+  <time datetime="2018-06-10T14:03:25.000Z" itemprop="datePublished">2018-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/10/十佳辅导员在线测评前端心得体会/">十佳辅导员在线测评前端心得体会</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-总体心态"><a href="#1-总体心态" class="headerlink" title="1. 总体心态"></a>1. 总体心态</h2><ol>
+<li>一开始其实说到这个我是拒绝的，毕竟我前端语言不熟，HTML标签与CSS样式运用不熟练，JS也不怎么了解，该如何做好一个真正的可以拿来让人使用的正式的界面呢？很慌，但是要当作一种历练，很多不会的东西，需要经过实践才可以巩固。</li>
+<li>重要的一点是写好前端的代码可以为文献管理系统的前端打下坚实的基础。现在多搞懂几个地方，将来便可以</li>
+</ol>
+<h2 id="2-具体知识点"><a href="#2-具体知识点" class="headerlink" title="2. 具体知识点"></a>2. 具体知识点</h2><ol>
+<li><p>全局url</p>
+<p>因为为了适合第一报告厅的网络情况，我们在系统上有了两套方案，一种是设置外网，一种是设置内网，这样url会有所不同。为了方便url切换，我们在前端页面中设置了全局变量以达到效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">exports.install = <span class="function"><span class="keyword">function</span> (<span class="params">Vue, options</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//  拼接Url</span></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  Vue.prototype.Url = <span class="function"><span class="keyword">function</span> (<span class="params">last</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// const url = "http://yb.ujn.edu.cn/be/public/";</span></span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">"http://sj.ujnxgzx.com/be/public/"</span>;</span><br><span class="line">    <span class="keyword">return</span> url + last;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>向上弹出的动画效果</p>
+<p>其实这个动画效果并不难，关键是不熟……</p>
+<p>运用css内的animation达到动画效果。</p>
+<p>具体实现：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> mymove</span><br><span class="line">&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> mymove /*Safari and Chrome*/</span><br><span class="line">&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> remove &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> remove &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.items</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#F8F9FB</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">animation-direction</span>:alternate;</span><br><span class="line">  <span class="attribute">animation</span>:mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>:mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-o-animation</span>: mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">  <span class="comment">/*height: 0;*/</span></span><br><span class="line">  <span class="attribute">transition</span>: height .<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>:<span class="number">1</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">90</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">12vh</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现的是点击以后弹出的效果，结合JS的隐藏和显示。</p>
+<p>因为是使用vue组件，所以使用的是vue的方法写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">items_top: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> mychar = <span class="built_in">document</span>.getElementById(<span class="string">"ITEM"</span>);</span><br><span class="line">        <span class="keyword">let</span> k = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO"</span>);</span><br><span class="line">        <span class="keyword">let</span> k2 = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO2"</span>);</span><br><span class="line">        <span class="keyword">let</span> k3 = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO3"</span>);</span><br><span class="line">        <span class="comment">// mychar.style.height = "160%";</span></span><br><span class="line">        <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (flag === <span class="literal">true</span>) &#123;</span><br><span class="line">          mychar.style.display = <span class="string">"block"</span>;</span><br><span class="line">          k.style.display = <span class="string">"none"</span>;</span><br><span class="line">          k2.style.display = <span class="string">"none"</span>;</span><br><span class="line">          k3.style.display = <span class="string">"none"</span>;</span><br><span class="line">          mychar.style.height = fullHeight;</span><br><span class="line">          flag = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">          mychar.style.display = <span class="string">"none"</span>;</span><br><span class="line">          flag = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+<p>​目的是先将细则一栏隐藏，当点击细则时将div变为block，此时触发动画，实现效果……</p>
+<p>看源码可以看出来我还隐藏了许多东西，那些是因为当界面滑至底部时点击细则不会使细则界面顶部位于当前屏幕顶部，若是打锚点实现不了效果，于是决定先隐藏上面的图片和文字，可以做到置顶效果。</p>
+</li>
+<li><p>接口连接</p>
+<ol>
+<li><p>get方法与post方法连接的区别</p>
+<p>牛学蔚学长的后台接口有两种方法，一种是post方法。连接方法需要根据接口要求传入请求头和请求参数，这里要注意语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">_this.$http.post(_this.Url(<span class="string">"grading"</span>), &#123;</span><br><span class="line">          <span class="string">'c'</span>: _this.$route.query.id,</span><br><span class="line">          <span class="string">'s'</span>: _this.score,</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          headers: &#123;</span><br><span class="line">            <span class="string">'SJ-Code'</span>: <span class="keyword">this</span>.$route.query.invite,</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res);</span><br><span class="line">          judge = res.body.code;</span><br><span class="line">          <span class="keyword">if</span> (judge === <span class="number">1</span>) &#123;</span><br><span class="line">            alert(<span class="string">"提交成功! "</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">"请输入0~100之间的数字!"</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>以上代码为例子。post方法请求参数放在第二个，请求头放在第三个。</p>
+<p>整个前端这唯一一个post却搞了我很长时间，要注意post必须有传值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">_this.$http.get(_this.Url(<span class="string">"grading/index/confirm"</span>), &#123;<span class="attr">headers</span>: &#123;<span class="string">'SJ-Code'</span>: _this.inv&#125;&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res);</span><br><span class="line">          judge = res.body.code;</span><br><span class="line">          warn = res.body.data;</span><br><span class="line">          <span class="keyword">let</span> mymessage = confirm(<span class="string">"确认提交?提交以后不可修改!"</span>);</span><br><span class="line">          <span class="keyword">if</span> (mymessage === <span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (judge === <span class="number">0</span>) &#123;</span><br><span class="line">              alert(warn);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="built_in">window</span>.location.href = <span class="string">"#/Return?code="</span> + _this.inv;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>get方法请求头放在第二位。get方法用来获取数据，所以需要设置变量，从接口中获得数据。</p>
+</li>
+</ol>
+</li>
+<li><p>设置锚点</p>
+<ol>
+<li><p>重点是方法要好</p>
+<p>说实话这个锚点一开始真的有些折腾人。我一个早上加一个下午去寻找合适的方法，CSDN、简书、慕课，查查查，试过了KeepAlive，试过了缓存，但却是因为列表页面需要打分数据实时更新，所以缓存这个路走到最后发现根本行不通。</p>
+<p>我又尝试了记录滚动条，但是……情况不太理想。vue自带一些记录滚动条的工具，但是效果不好，没达到想要实现的效果。</p>
+<p>最后选择了使用这个方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">jump(index) &#123;</span><br><span class="line">        <span class="keyword">let</span> changeTop = <span class="built_in">document</span>.getElementById(<span class="string">'fdy'</span> + index);</span><br><span class="line">        <span class="comment">// 获取需要滚动的距离</span></span><br><span class="line">        <span class="comment">// console.log('#fdy'+index)</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"jump:"</span> + changeTop.offsetTop);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> total = changeTop.offsetTop * <span class="number">0.9</span>;</span><br><span class="line">        <span class="comment">// Chrome</span></span><br><span class="line">        <span class="built_in">document</span>.body.scrollTop = total;</span><br><span class="line">        <span class="comment">// Firefox</span></span><br><span class="line">        <span class="built_in">document</span>.documentElement.scrollTop = total;</span><br><span class="line">        <span class="comment">// Safari</span></span><br><span class="line">        <span class="built_in">window</span>.pageYOffset = total;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+<p>fdy是每个辅导员自带的id，而我们需要根据这个id来确定我们刚刚是从哪个辅导员打分界面跳转回来的。根据这个确定要跳转的位置，实现锚点。乍一看似乎就这么回事……但实际操作……确实让我这个新手很头疼。</p>
+</li>
+</ol>
+</li>
+<li><p>vue的vue-router跳转传值</p>
+<p>并不难，就是记录一下。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in candidates"</span> <span class="attr">:key</span>=<span class="string">"index"</span> @<span class="attr">click.native</span>=<span class="string">"jump(index)"</span> <span class="attr">:id</span>=<span class="string">"item.id|fdy"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;path: authority?'/Marking':'#', query: authority?&#123;id: item.id, invite: inv&#125;:&#123;code: inv&#125;&#125;"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">id</span>=<span class="string">"TRANS"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"candidate-item"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>&#123;&#123;item.name&#125;&#125;（&#123;&#123;item.school&#125;&#125;）<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>&#123;&#123;if_score(item.id, item.name)&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意语法，path接URL，query内填写你要通过URL传递的值。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/10/十佳辅导员在线测评前端心得体会/" data-id="cji8wg8n10001oowuryqehex9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-今天" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/10/今天/" class="article-date">
@@ -245,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/今天/" data-id="cji8wbowp0000ecwuk0xh32w9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/今天/" data-id="cji8wg8n40002oowuoznmtk8f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/hello-world/" data-id="cji8wbowu0001ecwu0rdb76us" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/10/hello-world/" data-id="cji8wg8mx0000oowuchl2737p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,6 +415,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/10/十佳辅导员在线测评前端心得体会/">十佳辅导员在线测评前端心得体会</a>
+          </li>
         
           <li>
             <a href="/2018/06/10/今天/">Thinkphp学习历程</a>
