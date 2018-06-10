@@ -7,13 +7,17 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="#十佳辅导员在线测评前端心得体会 ##1. 总体心态  一开始其实说到这个我是拒绝的，毕竟我前端语言不熟，HTML标签与CSS样式运用不熟练，JS也不怎么了解，该如何做好一个真正的可以拿来让人使用的正式的界面呢？很慌，但是要当作一种历练，很多不会的东西，需要经过实践才可以巩固。 重要的一点是写好前端的代码可以为文献管理系统的前端打下坚实的基础。现在多搞懂几个地方，将来便可以  ##2. 具体知识点">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/10/十佳辅导员在线测评前端心得体会/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#十佳辅导员在线测评前端心得体会 ##1. 总体心态  一开始其实说到这个我是拒绝的，毕竟我前端语言不熟，HTML标签与CSS样式运用不熟练，JS也不怎么了解，该如何做好一个真正的可以拿来让人使用的正式的界面呢？很慌，但是要当作一种历练，很多不会的东西，需要经过实践才可以巩固。 重要的一点是写好前端的代码可以为文献管理系统的前端打下坚实的基础。现在多搞懂几个地方，将来便可以  ##2. 具体知识点">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-31T06:06:32.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#十佳辅导员在线测评前端心得体会 ##1. 总体心态  一开始其实说到这个我是拒绝的，毕竟我前端语言不熟，HTML标签与CSS样式运用不熟练，JS也不怎么了解，该如何做好一个真正的可以拿来让人使用的正式的界面呢？很慌，但是要当作一种历练，很多不会的东西，需要经过实践才可以巩固。 重要的一点是写好前端的代码可以为文献管理系统的前端打下坚实的基础。现在多搞懂几个地方，将来便可以  ##2. 具体知识点">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,202 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Thinkphp (2)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/Thinkphp (2)/" class="article-date">
-  <time datetime="2018-06-10T13:52:42.119Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Thinkphp学习历程</p>
-<p>php -S localhost:8888 router.php</p>
-<p>##1.目录结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tp5</span><br><span class="line">├─application     应用目录</span><br><span class="line">├─extend          扩展类库目录（可定义）</span><br><span class="line">├─public          网站对外访问目录</span><br><span class="line">├─runtime         运行时目录（可定义）</span><br><span class="line">├─vendor          第三方类库目录（Composer）</span><br><span class="line">├─thinkphp        框架核心目录</span><br><span class="line">├─build.php       自动生成定义文件（参考）</span><br><span class="line">├─composer.json   Composer定义文件</span><br><span class="line">├─LICENSE.txt     授权说明文件</span><br><span class="line">├─README.md       README 文件</span><br><span class="line">├─think           命令行工具入口</span><br></pre></td></tr></table></figure>
-<p>##2.核心框架</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">├─thinkphp 框架系统目录</span><br><span class="line">│  ├─lang               语言包目录</span><br><span class="line">│  ├─library            框架核心类库目录</span><br><span class="line">│  │  ├─think           think 类库包目录</span><br><span class="line">│  │  └─traits          系统 traits 目录</span><br><span class="line">│  ├─tpl                系统模板目录</span><br><span class="line">│  │</span><br><span class="line">│  ├─.htaccess          用于 apache 的重写</span><br><span class="line">│  ├─.travis.yml        CI 定义文件</span><br><span class="line">│  ├─base.php           框架基础文件</span><br><span class="line">│  ├─composer.json      composer 定义文件</span><br><span class="line">│  ├─console.php        控制台入口文件</span><br><span class="line">│  ├─convention.php     惯例配置文件</span><br><span class="line">│  ├─helper.php         助手函数文件（可选）</span><br><span class="line">│  ├─LICENSE.txt        授权说明文件</span><br><span class="line">│  ├─phpunit.xml        单元测试配置文件</span><br><span class="line">│  ├─README.md          README 文件</span><br><span class="line">│  └─start.php          框架引导文件</span><br></pre></td></tr></table></figure>
-<p>##3.命名规范</p>
-<p>###1. 函数、类属性</p>
-<ol>
-<li>Thinkphp目录名称中只允许出现小写字母和下划线。</li>
-<li>类库函数文件名均以.php结尾。</li>
-<li>类的文件名均已命名空间定义，且命名空间和类库文件所在的路径一致。</li>
-<li>类文件采用驼峰，首字母大写，且类与为文件名保持一致；其余文件为小写+下划线命名。</li>
-<li>类名采用驼峰命名，首字母大写不需要添加后缀。</li>
-<li>函数使用驼峰命名，首字母小写，例子(getUesName)。</li>
-<li>属性名采用驼峰，首字母小写，例如(listName)。</li>
-<li>魔术方法命名前面加两个下划线 例如(__construct)。</li>
-</ol>
-<p>###2. 常量和配置</p>
-<ol>
-<li>常量以大写字母和下划线命名。</li>
-<li>配置参数以小写字母和下划线命名。</li>
-</ol>
-<p>###3. 其他</p>
-<ol>
-<li>表和字段采用小写+下划线的命名方式，不能以下划线开头。</li>
-<li>应用类库的命名空间统一为app(可以配置)。</li>
-</ol>
-<p>##4. 模块设计</p>
-<ol>
-<li><p>common默认作为一个公用的模块，不允许在URL上面直接访问。</p>
-<p>我们在common\controller\Index.php中写道：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace app\common\controller;</span><br><span class="line"></span><br><span class="line">class Index</span><br><span class="line"></span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">       public function index()</span><br><span class="line"></span><br><span class="line">       &#123;</span><br><span class="line"></span><br><span class="line">           return &quot;This is common Index index&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>   然后在index\controller\Index.php中调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">   namespace app\index\controller;</span><br><span class="line"></span><br><span class="line">   use app\common\controller\Index as commonIndex;</span><br><span class="line"></span><br><span class="line">   class Index</span><br><span class="line"></span><br><span class="line">   &#123;</span><br><span class="line"></span><br><span class="line">       public function index()</span><br><span class="line"></span><br><span class="line">       &#123;</span><br><span class="line"></span><br><span class="line">           return &quot;This is Index index index&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public function common()</span><br><span class="line"></span><br><span class="line">       &#123;</span><br><span class="line"></span><br><span class="line">           $common = new commonIndex();</span><br><span class="line"></span><br><span class="line">           return $common-&gt;index();</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>组件的作者将配置的好的文件全都放在了里面，打开config.php就可以查看。调用的话可以使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">  namespace app\index\controller;</span><br><span class="line"></span><br><span class="line">  class Test&#123;</span><br><span class="line"></span><br><span class="line">      public function test()</span><br><span class="line"></span><br><span class="line">      &#123;</span><br><span class="line"></span><br><span class="line">          dump(config());</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>##5.入口文件</p>
-<ol>
-<li>单入口文件的优势：<ol>
-<li>安全检测；</li>
-<li>请求过滤；</li>
-</ol>
-</li>
-<li>需要记住的地方：<ol>
-<li>在入口文件我们可以修改一些系统默认的配置；</li>
-<li>必须要引入start.php。</li>
-</ol>
-</li>
-</ol>
-<p>##6.URL和路由</p>
-<ol>
-<li><p>标准的URL访问格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://domainName/index.php/模块/控制器/操作</span><br></pre></td></tr></table></figure>
-<p>我在index模块下有一个index控制器，里面有两个方法，一个是index方法，一个是hello方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace app\index\controller;</span><br><span class="line"></span><br><span class="line">class Index</span><br><span class="line">&#123;</span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">        return &apos;index&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function hello($name = &apos;World&apos;)</span><br><span class="line">    &#123;</span><br><span class="line">        return &apos;Hello,&apos; . $name . &apos;!&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>若是我在访问中URL是这么填写的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8888/index.php/index/index/index</span><br></pre></td></tr></table></figure>
-<p>想都不用想肯定会出问题的呀！</p>
-<p>如果我们直接访问入口文件的话，由于URL中没有模块、控制器和操作，因此系统会访问默认模块（index）下面的默认控制器（Index）的默认操作（index）。</p>
-<p>我这样相当于是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>所以说……</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8888/index.php/index/index/hello/name/thinkphp</span><br></pre></td></tr></table></figure>
-<p>这样就可以得到控制器的hello方法。</p>
-<p>由于name是可选参数，所以也可以省略name包括后面的，直接写成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>因为默认的URL访问是不区分大小写的，全部都会转换为小写的控制器名，除非你在应用配置文件中，设置了关闭url自动转换如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;url_convert&apos; =&gt; false,</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>​<br>##7.数据库</p>
-<ol>
-<li><p>数据查询由低到高分为三个层次：</p>
-<ol>
-<li>数据库原生查询（SQL查询）；</li>
-<li>数据库链式查询（查询构造器）；</li>
-<li>模型的对象化查询；</li>
-</ol>
-</li>
-<li><p>查询构造器</p>
-<p>除了原生查询外，5.0还提供了数据库查询构造器，可以更方便执行数据库操作，查询构造器基于PDO实现，对不同的数据库驱动都是统一的语法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 插入记录</span><br><span class="line">Db::table(&apos;think_data&apos;)</span><br><span class="line">    -&gt;insert([&apos;id&apos; =&gt; 18, &apos;name&apos; =&gt; &apos;thinkphp&apos;, &apos;status&apos; =&gt; 1]);</span><br><span class="line"></span><br><span class="line">// 更新记录</span><br><span class="line">Db::table(&apos;think_data&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;update([&apos;name&apos; =&gt; &quot;hello&quot;]);</span><br><span class="line"></span><br><span class="line">// 查询数据</span><br><span class="line">$list = Db::table(&apos;think_data&apos;)</span><br><span class="line">	-&gt;field(&apos;name,email&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;select();</span><br><span class="line"></span><br><span class="line">// 删除数据</span><br><span class="line">Db::table(&apos;think_data&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;delete();</span><br></pre></td></tr></table></figure>
-<p>增删读写，基本靠这四种语法来回使用达到目的。</p>
-<p>由于我们在数据库配置文件中设置了数据表的前缀为<code>think_</code>，因此，<code>table</code>方法可以改成<code>name</code>方法，这样就不会因为数据表前缀的修改而改动<code>CURD</code>代码，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 插入记录</span><br><span class="line">Db::name(&apos;data&apos;)</span><br><span class="line">    -&gt;insert([&apos;id&apos; =&gt; 18, &apos;name&apos; =&gt; &apos;thinkphp&apos;]);</span><br><span class="line"></span><br><span class="line">// 更新记录</span><br><span class="line">Db::name(&apos;data&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;update([&apos;name&apos; =&gt; &quot;framework&quot;]);</span><br><span class="line"></span><br><span class="line">// 查询数据</span><br><span class="line">$list = Db::name(&apos;data&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;select();</span><br><span class="line">dump($list);</span><br><span class="line"></span><br><span class="line">// 删除数据</span><br><span class="line">Db::name(&apos;data&apos;)</span><br><span class="line">    -&gt;where(&apos;id&apos;, 18)</span><br><span class="line">    -&gt;delete();</span><br></pre></td></tr></table></figure>
-<p>最后附上评论区大神的总结：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Db::(&apos;表&apos;)</span><br><span class="line">-&gt;where(&apos;列&apos;,&apos;比较符&apos;,&apos;值&apos;)</span><br><span class="line">-&gt;insert([列=&gt;值...])</span><br><span class="line">-&gt;delete()</span><br><span class="line">-&gt;update(列=&gt;值...)</span><br><span class="line">-&gt;select()</span><br></pre></td></tr></table></figure>
-<p>算了……还是先学学查询表达式吧……</p>
-<p>​</p>
-<p>​</p>
-<p>​</p>
-</li>
-</ol>
-<p>##8.查询表达式</p>
-</li>
-<li><p>查询表达式如下：</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EQ、=</td>
-<td>等于（=）</td>
-</tr>
-<tr>
-<td>NEQ、&lt;&gt;</td>
-<td>不等于（&lt;&gt;）</td>
-</tr>
-<tr>
-<td>GT、&gt;</td>
-<td>大于（&gt;）</td>
-</tr>
-<tr>
-<td>EGT、&gt;=</td>
-<td>大于等于（&gt;=）</td>
-</tr>
-<tr>
-<td>LT、&lt;</td>
-<td>小于（&lt;）</td>
-</tr>
-<tr>
-<td>ELT、&lt;=</td>
-<td>小于等于（&lt;=）</td>
-</tr>
-<tr>
-<td>LIKE</td>
-<td>模糊查询</td>
-</tr>
-<tr>
-<td>[NOT] BETWEEN</td>
-<td>（不在）区间查询</td>
-</tr>
-<tr>
-<td>[NOT] IN</td>
-<td>（不在）IN 查询</td>
-</tr>
-<tr>
-<td>[NOT] NULL</td>
-<td>查询字段是否（不）是NULL</td>
-</tr>
-<tr>
-<td>[NOT] EXISTS</td>
-<td>EXISTS查询</td>
-</tr>
-<tr>
-<td>EXP</td>
-<td>表达式查询，支持SQL语法</td>
-</tr>
-</tbody>
-</table>
-<ol start="2">
-<li>​</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/Thinkphp (2)/" data-id="cji8w1ycb0000pwwuh19dgp4s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-十佳辅导员在线测评前端心得体会" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-十佳辅导员在线测评前端心得体会" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/10/十佳辅导员在线测评前端心得体会/" class="article-date">
   <time datetime="2018-06-10T13:52:42.110Z" itemprop="datePublished">2018-06-10</time>
@@ -330,56 +139,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/hello-world/" class="article-date">
-  <time datetime="2018-06-10T12:41:29.153Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2018/06/10/Thinkphp (2)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2018/06/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/10/hello-world/" data-id="cji8v7wxr0000nwwuozlghjfy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
