@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/献文皇后端（thinkphp）总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/献文帝后端（thinkphp）总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/11/献文皇后端（thinkphp）总结/" itemprop="url">献文皇后端（thinkphp）总结</a></h1>
+                <a class="post-title-link" href="/2018/07/11/献文帝后端（thinkphp）总结/" itemprop="url">献文帝后端（thinkphp）总结</a></h1>
         
 
         <div class="post-meta">
@@ -316,145 +316,6 @@
 <li>登出是将session中id与用户名取出，将session清空，然后记录登出时间并计算出在线时间存入数据库。</li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">loginout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $username = session(<span class="string">'name'</span>);</span><br><span class="line">        $userid = session(<span class="string">'id'</span>);</span><br><span class="line">        session(<span class="string">'id'</span>, <span class="keyword">null</span>);</span><br><span class="line">        session(<span class="string">'name'</span>, <span class="keyword">null</span>);</span><br><span class="line"><span class="comment">//        $username = "yyn";</span></span><br><span class="line"><span class="comment">//        $userid = 2;</span></span><br><span class="line">        <span class="keyword">echo</span> $username . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>($username) &amp;&amp; !<span class="keyword">empty</span>($userid)) &#123;</span><br><span class="line">            $out_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line"><span class="comment">//        echo $out_time . '&lt;br/&gt;';</span></span><br><span class="line">            $user = <span class="keyword">new</span> User();<span class="comment">// 实例化模型</span></span><br><span class="line">            $sql0 = <span class="string">"select * from `xwd_users_login_info` where userid='"</span> . $userid . <span class="string">"'"</span>;</span><br><span class="line">            $select0 = $user-&gt;query($sql0);</span><br><span class="line">            $in_time = $select0[<span class="number">0</span>][<span class="string">"in_time"</span>];</span><br><span class="line"><span class="comment">//        echo $in_time . '&lt;br/&gt;';</span></span><br><span class="line">            $in_time_s = strtotime($in_time);</span><br><span class="line">            $out_time_s = strtotime($out_time);</span><br><span class="line">            $time_long = $out_time_s - $in_time_s;</span><br><span class="line"><span class="comment">//        echo $long_time.'&lt;br/&gt;';</span></span><br><span class="line">            Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;where(<span class="string">'userid'</span>, $userid)-&gt;update([<span class="string">'out_time'</span> =&gt; $out_time]);</span><br><span class="line">            Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;where(<span class="string">'userid'</span>, $userid)-&gt;update([<span class="string">'time_long'</span> =&gt; $time_long]);</span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">1</span>, <span class="string">'message'</span> =&gt; <span class="string">"成功登出！"</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">0</span>, <span class="string">'message'</span> =&gt; <span class="string">"登出失败！"</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/献文帝注册登录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/11/献文帝注册登录/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-11T16:37:11+08:00">
-                2018-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#献文帝注册登录-Thinkphp</p>
-<ol>
-<li><p>为保证密码在存储过程中的安全，我们选择密码加盐。</p>
-<p>在密码学中，是指通过在密码任意固定位置插入特定的字符串，让散列后的结果和使用原始密码的散列结果不相符，这种过程称之为“加盐”。 </p>
-</li>
-<li><p>初步加盐很简单，就是选择字符串并打乱，然后截取其中一部分加到密码上，并进行md5加密，存入数据库。</p>
-</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//判断页面是否提交</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;display();</span><br><span class="line">        $username = input(<span class="string">'username'</span>);</span><br><span class="line">        $pwd = input(<span class="string">'pwd'</span>);</span><br><span class="line">        $str = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'</span>;</span><br><span class="line">        $randStr = str_shuffle($str);<span class="comment">//打乱字符串</span></span><br><span class="line">        $salt = substr($randStr, <span class="number">0</span>, <span class="number">6</span>);<span class="comment">//substr(string,start,length);返回字符串的一部分</span></span><br><span class="line">        $pwd = sha1($pwd . $salt);</span><br><span class="line">        $pwd = md5($pwd);</span><br><span class="line"><span class="comment">//        dump(input('post.')); //打印接收到的参数</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>($username) &amp;&amp; !<span class="keyword">empty</span>($pwd)) &#123;</span><br><span class="line">            <span class="comment">// 判断该用户是否已经注册</span></span><br><span class="line">            $user = <span class="keyword">new</span> User();</span><br><span class="line">            $sql = <span class="string">"select * from `xwd_users_login_info` where username='"</span> . $username . <span class="string">"'"</span>;</span><br><span class="line">            $select = $user-&gt;query($sql);</span><br><span class="line"><span class="comment">//            var_dump($select);</span></span><br><span class="line">            <span class="keyword">if</span> ($select) &#123;<span class="comment">// 如果存在该用户</span></span><br><span class="line">                <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">0</span>, <span class="string">'message'</span> =&gt; <span class="string">'该用户已经注册，请直接登录！'</span>]);</span><br><span class="line">            &#125; <span class="comment">// 注册</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                $data = <span class="keyword">array</span>(</span><br><span class="line">                    <span class="string">'username'</span> =&gt; $username,</span><br><span class="line">                    <span class="string">'pwd'</span> =&gt; $pwd,</span><br><span class="line">                    <span class="string">'salt'</span> =&gt; $salt,</span><br><span class="line">                );</span><br><span class="line">                <span class="comment">//  添加数据</span></span><br><span class="line">                $insert = Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;insert($data);</span><br><span class="line">                <span class="keyword">if</span> ($insert) &#123;   <span class="comment">// 如果注册成功</span></span><br><span class="line">                    <span class="comment">// 将用户名密码保存在session中</span></span><br><span class="line"><span class="comment">//                    session_start();</span></span><br><span class="line"><span class="comment">//                    $_SESSION['username'] = $username;</span></span><br><span class="line"><span class="comment">//                    $_SESSION['pwd'] = $pwd;</span></span><br><span class="line">                    <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">1</span>, <span class="string">'message'</span> =&gt; <span class="string">'注册成功！'</span>]);</span><br><span class="line">                    <span class="comment">// 页面跳转</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;   <span class="comment">// 如果注册失败&#125;</span></span><br><span class="line">                    <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">-1</span>, <span class="string">'message'</span> =&gt; <span class="string">"注册失败"</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>登录功能就是比对账号，若存在则将对应盐取出，进行同样的加密后比对，密码相同即可登录成功，并将用户id和用户名存入session。</p>
-<p>这里同时也存入了登入时间。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;display();</span><br><span class="line">        $username = input(<span class="string">'username'</span>); <span class="comment">// 获取用户名</span></span><br><span class="line">        $pwd = input(<span class="string">'pwd'</span>);   <span class="comment">// 获取密码</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>($username) &amp;&amp; !<span class="keyword">empty</span>($pwd)) &#123;<span class="comment">//如果用户名和密码非空</span></span><br><span class="line">            $user = <span class="keyword">new</span> User();<span class="comment">// 实例化模型</span></span><br><span class="line">            $sql0 = <span class="string">"select * from `xwd_users_login_info` where username='"</span> . $username . <span class="string">"'"</span>;</span><br><span class="line">            $select0 = $user-&gt;query($sql0);</span><br><span class="line"><span class="comment">//            var_dump($select0);</span></span><br><span class="line">            <span class="keyword">if</span> ($select0) &#123;</span><br><span class="line">                $salt = $select0[<span class="number">0</span>][<span class="string">"salt"</span>];</span><br><span class="line">                $pwd = sha1($pwd . $salt);</span><br><span class="line">                $pwd = md5($pwd);</span><br><span class="line">                $sql = <span class="string">"select * from `xwd_users_login_info` where username='"</span> . $username . <span class="string">"' and pwd='"</span> . $pwd . <span class="string">"'"</span>;</span><br><span class="line">                $select = $user-&gt;query($sql);</span><br><span class="line">                <span class="keyword">if</span> ($select) &#123;</span><br><span class="line">                    <span class="comment">// 如果存在该用户</span></span><br><span class="line">                    <span class="comment">//记录cookie</span></span><br><span class="line"><span class="comment">//                    cookie('userid', $select[0]['userid'], 3600);  // 一个小时有效期</span></span><br><span class="line"><span class="comment">//                    cookie('username', $select[0]['username'], 3600);</span></span><br><span class="line">                    <span class="comment">//记录session</span></span><br><span class="line">                    session_start();</span><br><span class="line">                    session(<span class="string">'id'</span>, $select[<span class="number">0</span>][<span class="string">'userid'</span>]);</span><br><span class="line">                    session(<span class="string">'name'</span>, $select[<span class="number">0</span>][<span class="string">'username'</span>]);</span><br><span class="line"></span><br><span class="line">                    $in_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line">                    Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;where(<span class="string">'username'</span>, $username)-&gt;update([<span class="string">'in_time'</span> =&gt; $in_time]);</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">1</span>, <span class="string">'message'</span> =&gt; <span class="string">"登陆成功！"</span>]);</span><br><span class="line"><span class="comment">//                    $this-&gt;redirect('Index/show', '', 5, '登录成功！前往用户中心!...页面跳转中...');</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;  <span class="comment">// 如果用户不存在</span></span><br><span class="line">                    <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">0</span>, <span class="string">'message'</span> =&gt; <span class="string">"用户名或密码错误，请检查输入是否正确！"</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">0</span>, <span class="string">'message'</span> =&gt; <span class="string">"用户名或密码错误，请检查输入是否正确！"</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果用户名或密码未填写</span></span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">2</span>, <span class="string">'message'</span> =&gt; <span class="string">"请输入用户名和密码！"</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果点击注册按钮,跳转到注册页面（未完善）</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>($_POST[<span class="string">'zc'</span>])) &#123;</span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">10001</span>, <span class="string">'message'</span> =&gt; <span class="string">"正在跳转注册页面，请稍候"</span>]);</span><br><span class="line"><span class="comment">//            $this-&gt;redirect('Index/zhuce', '', 3, '前往用户注册中心!...页面跳转中...');</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="4">
-<li><p>登出是将session中id与用户名取出，将session清空，然后记录登出时间并计算出在线时间存入数据库。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">loginout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $username = session(<span class="string">'name'</span>);</span><br><span class="line">        $userid = session(<span class="string">'id'</span>);</span><br><span class="line">        session(<span class="string">'id'</span>, <span class="keyword">null</span>);</span><br><span class="line">        session(<span class="string">'name'</span>, <span class="keyword">null</span>);</span><br><span class="line"><span class="comment">//        $username = "yyn";</span></span><br><span class="line"><span class="comment">//        $userid = 2;</span></span><br><span class="line">        <span class="keyword">echo</span> $username . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>($username) &amp;&amp; !<span class="keyword">empty</span>($userid)) &#123;</span><br><span class="line">            $out_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line"><span class="comment">//        echo $out_time . '&lt;br/&gt;';</span></span><br><span class="line">            $user = <span class="keyword">new</span> User();<span class="comment">// 实例化模型</span></span><br><span class="line">            $sql0 = <span class="string">"select * from `xwd_users_login_info` where userid='"</span> . $userid . <span class="string">"'"</span>;</span><br><span class="line">            $select0 = $user-&gt;query($sql0);</span><br><span class="line">            $in_time = $select0[<span class="number">0</span>][<span class="string">"in_time"</span>];</span><br><span class="line"><span class="comment">//        echo $in_time . '&lt;br/&gt;';</span></span><br><span class="line">            $in_time_s = strtotime($in_time);</span><br><span class="line">            $out_time_s = strtotime($out_time);</span><br><span class="line">            $time_long = $out_time_s - $in_time_s;</span><br><span class="line"><span class="comment">//        echo $long_time.'&lt;br/&gt;';</span></span><br><span class="line">            Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;where(<span class="string">'userid'</span>, $userid)-&gt;update([<span class="string">'out_time'</span> =&gt; $out_time]);</span><br><span class="line">            Db::table(<span class="string">'xwd_users_login_info'</span>)-&gt;where(<span class="string">'userid'</span>, $userid)-&gt;update([<span class="string">'time_long'</span> =&gt; $time_long]);</span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">1</span>, <span class="string">'message'</span> =&gt; <span class="string">"成功登出！"</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> json_encode([<span class="string">'code'</span> =&gt; <span class="number">0</span>, <span class="string">'message'</span> =&gt; <span class="string">"登出失败！"</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 
           
         
@@ -1109,7 +970,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
