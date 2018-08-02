@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="后端总结1.token产生与验证 产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; GlobalVar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T12:02:06.494Z">
+<meta property="og:updated_time" content="2018-08-02T12:06:07.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thinkphp后端初涉小结">
 <meta name="twitter:description" content="后端总结1.token产生与验证 产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; GlobalVar">
@@ -374,7 +374,7 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$token = Request::instance()-&gt;token();</span><br></pre></td></tr></table></figure>
 <p>通过引入Request并引用token()来生成随机token，然后</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">               <span class="string">'user_id'</span> =&gt; $data[<span class="string">'user_id'</span>],</span><br><span class="line">               <span class="string">'ip'</span> =&gt; GlobalVariable::get_client_ip(),</span><br><span class="line">               <span class="string">'in_time'</span> =&gt; date(<span class="string">'Y-m-d H:i:s'</span>),</span><br><span class="line">               <span class="string">'token'</span> =&gt; $token,</span><br><span class="line">               <span class="string">'expire_time'</span> =&gt; $expire_time,</span><br><span class="line">           ];</span><br><span class="line">           Db::name(<span class="string">'xwd_user_login_info'</span>)-&gt;insert($array);</span><br><span class="line">           <span class="keyword">return</span> GlobalVariable::promptData([<span class="string">'token'</span> =&gt; $token, <span class="string">'expire_time'</span> =&gt; $expire_time]);</span><br></pre></td></tr></table></figure>
-<p>将token与expire_time(过去时间)存入数据库，并将两个字段返回。前端用于存入cookie作为用户登录验证。</p>
+<p>将token与expire_time(过期时间)存入数据库，并将两个字段返回。前端用于存入cookie作为用户登录验证。</p>
 </li>
 <li><p>验证</p>
 <p>我在user下的所有controller都以common中UserController作为基类，而这个基类的作用为：</p>
