@@ -592,6 +592,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/模拟办公系统模板制作前端注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/22/模拟办公系统模板制作前端注意事项/" itemprop="url">模拟办公系统模板制作前端注意事项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T10:03:07+08:00">
+                2018-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h1><ol>
+<li><p>选择题</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in exam"</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!--&#123;volist name="list" id="vo"&#125;--&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>&#123;&#123;item.id&#125;&#125;.&#123;&#123;item.title&#125;&#125;<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="comment">&lt;!--点击的时候将对应题目id和第几个选项传入方法--&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-on:click</span>=<span class="string">"seli(item.id-1,0)"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">:id</span>=<span class="string">item.id</span> <span class="attr">class</span>=<span class="string">"a option"</span></span></span><br><span class="line"><span class="tag">                                                             <span class="attr">v-bind:class</span>=<span class="string">"&#123;'select':dataSelect[item.id-1][0]&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      A.&#123;&#123;item.option_a&#125;&#125;</span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-on:click</span>=<span class="string">"seli(item.id-1,1)"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">:id</span>=<span class="string">item.id</span> <span class="attr">class</span>=<span class="string">"b option"</span></span></span><br><span class="line"><span class="tag">                                                             <span class="attr">v-bind:class</span>=<span class="string">"&#123;'select':dataSelect[item.id-1][1]&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      B.&#123;&#123;item.option_b&#125;&#125;</span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-on:click</span>=<span class="string">"seli(item.id-1,2)"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">:id</span>=<span class="string">item.id</span> <span class="attr">class</span>=<span class="string">"c option"</span></span></span><br><span class="line"><span class="tag">                                                             <span class="attr">v-bind:class</span>=<span class="string">"&#123;'select':dataSelect[item.id-1][2]&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      C.&#123;&#123;item.option_c&#125;&#125;</span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-on:click</span>=<span class="string">"seli(item.id-1,3)"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">:id</span>=<span class="string">item.id</span> <span class="attr">class</span>=<span class="string">"d option"</span></span></span><br><span class="line"><span class="tag">                                                             <span class="attr">v-bind:class</span>=<span class="string">"&#123;'select':dataSelect[item.id-1][3]&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                      D.&#123;&#123;item.option_d&#125;&#125;</span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在Vue中设置二维数组，使用$set方法！</p>
+<p>由于系统特殊要求题目顺序是随机打乱给的，而前端要返回给后端的题目顺序需要是1~70的顺序，所以方法稍微改了改：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">     get_name() &#123;</span><br><span class="line">       <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">       <span class="comment">// let data = _this.$qs.stringify(&#123;</span></span><br><span class="line">       <span class="comment">//   'id': _this.id,</span></span><br><span class="line">       <span class="comment">// &#125;);</span></span><br><span class="line">       <span class="comment">// let token = _this.getCookie("token");</span></span><br><span class="line">       _this.$http.get(_this.apiUrl(<span class="string">"index/index/index"</span>), &#123;</span><br><span class="line">         headers: &#123;</span><br><span class="line">           <span class="string">'token'</span>: _this.token,</span><br><span class="line">           <span class="string">'sid'</span>: _this.sid,</span><br><span class="line">         &#125;,</span><br><span class="line">         params: &#123;</span><br><span class="line">           <span class="string">'id'</span>: _this.id,</span><br><span class="line">         &#125;,</span><br><span class="line">       &#125;)</span><br><span class="line">         .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">           <span class="comment">// console.log(res);</span></span><br><span class="line">           _this.code = res.data.statusCode;</span><br><span class="line">           _this.reason = res.data.reason;</span><br><span class="line">           <span class="keyword">if</span> (_this.code === <span class="number">500</span>) &#123;</span><br><span class="line">             Toast.fail(_this.reason);</span><br><span class="line">             <span class="built_in">document</span>.getElementById(<span class="string">"all"</span>).style.display = <span class="string">"none"</span>;</span><br><span class="line">             setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               <span class="built_in">window</span>.location.href = <span class="string">"#/index?sid="</span> + _this.sid;</span><br><span class="line">             &#125;, <span class="number">3500</span>);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">             _this.video = res.data.data.video;</span><br><span class="line">             <span class="built_in">console</span>.log(_this.video);</span><br><span class="line">             <span class="keyword">if</span> (_this.video.url === <span class="literal">undefined</span>) &#123;</span><br><span class="line">               <span class="built_in">document</span>.getElementById(<span class="string">"video"</span>).style.display = <span class="string">"none"</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             _this.exam = res.data.data.question;</span><br><span class="line">             <span class="comment">// console.log(_this.exam[0].id);</span></span><br><span class="line">          </span><br><span class="line">             <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; _this.exam.length; i++) &#123;</span><br><span class="line">               _this.$set(_this.dataSelect, i , [<span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>]);</span><br><span class="line">             &#125;<span class="comment">//先将数组初始化，全部变成false</span></span><br><span class="line">             <span class="built_in">console</span>.log(_this.dataSelect);</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;);</span><br><span class="line">     &#125;,</span><br><span class="line">    seli(id, index) &#123;<span class="comment">//这里接收到方法后将对应的元素进行改变，这里true和false来回切换可以做到点击选择和取消选择</span></span><br><span class="line">       <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">       _this.$set(_this.dataSelect[id], index, !_this.dataSelect[id][index]);</span><br><span class="line">       <span class="built_in">console</span>.log(_this.dataSelect);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>qs，json</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = _this.$qs.stringify(&#123;</span><br><span class="line">         <span class="string">'vid'</span>: _this.id,</span><br><span class="line">         <span class="string">'answer'</span>: <span class="built_in">JSON</span>.stringify(_this.anws)</span><br><span class="line">       &#125;);</span><br><span class="line">       <span class="comment">// let token = _this.getCookie("token");</span></span><br><span class="line">       _this.$http.post(_this.apiUrl(<span class="string">"index/index/index"</span>), data, &#123;</span><br><span class="line">         headers: &#123;</span><br><span class="line">           <span class="string">'token'</span>: <span class="string">"41fb54b3bf9ee7b8fd5a54a5ce49afeb"</span>,</span><br><span class="line">           <span class="string">'sid'</span>: _this.sid</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;)</span><br><span class="line">         .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">           <span class="built_in">console</span>.log(res);</span><br><span class="line">           _this.reason = res.data.reason;</span><br><span class="line">           <span class="built_in">console</span>.log(_this.reason);</span><br><span class="line">         &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成试题显示技巧</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-wrapper"</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in exam"</span> <span class="attr">:id</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">class</span>=<span class="string">"swiper-slide video"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imgContainer"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"item.pic_url"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"detailsContainer"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"details floatLeft"</span>&gt;</span>&#123;&#123;item.category&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"details floatRight"</span>&gt;</span>时长&amp;nbsp;&#123;&#123;item.duration&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:0;clear:both;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"introduction"</span>&gt;</span>&#123;&#123;item.description&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottomStatus"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">"'none'+item.id"</span> <span class="attr">style</span>=<span class="string">"display: block"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to.native</span>=<span class="string">"&#123;path:'/videoexam',query:&#123;id:item.id,sid:sid&#125;&#125;"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"playButton"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>播放视频<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">"'warning'+item.id"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../../static/img/index/video_list/warning.png"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&amp;nbsp;考试未开始<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">"'finish'+item.id"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../../static/img/index/video_list/checkmark.png"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&amp;nbsp;已完成考试<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">"'end'+item.id"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../../static/img/index/video_list/end.png"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&amp;nbsp;考试已结束<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>四个button分别是播放视频、显示考试未开始、显示已完成考试和考试已结束。</p>
+<p>想要通过“document.getElementById”来控制按钮是否显示，如何区分不同的题？靠id拼接题号完成。</p>
+<p>这里需要注意，style一定要有值，否则会报错。</p>
+<p>然后js这样控制：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">getData() &#123;</span><br><span class="line">        <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">        <span class="comment">// let token = _this.getCookie("token");</span></span><br><span class="line">        _this.$http.get(_this.apiUrl(<span class="string">"exam"</span>), &#123;</span><br><span class="line">          headers: &#123;</span><br><span class="line">            <span class="string">'token'</span>: _this.token,</span><br><span class="line">            <span class="string">'sid'</span>: _this.sid</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">          .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            _this.exam = res.data.data;</span><br><span class="line">            <span class="comment">// console.log(_this.exam);</span></span><br><span class="line">            _this.$http.get(_this.apiUrl(<span class="string">"index/index/index"</span>), &#123;</span><br><span class="line">              headers: &#123;</span><br><span class="line">                <span class="string">'token'</span>: _this.token,</span><br><span class="line">                <span class="string">'sid'</span>: _this.sid,</span><br><span class="line">              &#125;,</span><br><span class="line">            &#125;)</span><br><span class="line">              .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                _this.status = res.data.data;</span><br><span class="line">                <span class="comment">// console.log(_this.status);</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; _this.status.length; i++) &#123;</span><br><span class="line">                  <span class="comment">// console.log(i);</span></span><br><span class="line">                  <span class="comment">// console.log(_this.status[i].video_id);</span></span><br><span class="line">                  <span class="keyword">if</span> (_this.status[i].status === <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"none"</span> + _this.status[i].video_id).style.display = <span class="string">"none"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"finish"</span> + _this.status[i].video_id).style.display = <span class="string">"block"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"warning"</span> + _this.status[i].video_id).style.display = <span class="string">"none"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"end"</span> + _this.status[i].video_id).style.display = <span class="string">"none"</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; _this.exam.length; i++) &#123;</span><br><span class="line">              <span class="keyword">let</span> k = i + <span class="number">1</span>;</span><br><span class="line">              _this.$http.get(_this.apiUrl(<span class="string">"index/index/index"</span>), &#123;</span><br><span class="line">                headers: &#123;</span><br><span class="line">                  <span class="string">'token'</span>: _this.token,</span><br><span class="line">                  <span class="string">'sid'</span>: _this.sid,</span><br><span class="line">                &#125;,</span><br><span class="line">                params: &#123;</span><br><span class="line">                  <span class="string">'id'</span>: k,</span><br><span class="line">                &#125;,</span><br><span class="line">              &#125;)</span><br><span class="line">                .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                  <span class="comment">// console.log(res);</span></span><br><span class="line">                  <span class="keyword">let</span> code = res.data.statusCode;</span><br><span class="line">                  <span class="comment">// console.log(i + 1);</span></span><br><span class="line">                  <span class="keyword">if</span> (code === <span class="number">500</span>) &#123;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"none"</span> + k).style.display = <span class="string">"none"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"finish"</span> + k).style.display = <span class="string">"block"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"warning"</span> + k).style.display = <span class="string">"none"</span>;</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"end"</span> + k).style.display = <span class="string">"none"</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/献文帝后端（thinkphp）总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -706,6 +844,451 @@
 </code></pre><p>###3.用户注销</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">doLogout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $token = Request::instance()-&gt;header(<span class="string">'token'</span>);</span><br><span class="line">        $select = Db::name(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;find();</span><br><span class="line">        $in_time = $select[<span class="string">"in_time"</span>];</span><br><span class="line">        $out_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line">        $in_time_s = strtotime($in_time);</span><br><span class="line">        $out_time_s = strtotime($out_time);</span><br><span class="line">        $time_long = $out_time_s - $in_time_s;</span><br><span class="line">        Db::table(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;update([<span class="string">'out_time'</span> =&gt; $out_time, <span class="string">'time_long'</span> =&gt; $time_long, <span class="string">'out_c'</span> =&gt; $out_time_s]);</span><br><span class="line">        Session::clear(<span class="string">'xwd_user'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>主要是为了方便统计，记录了时间戳也记录了标准的时间。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/十佳辅导员在线测评前端心得体会/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/十佳辅导员在线测评前端心得体会/" itemprop="url">十佳辅导员在线测评前端心得体会</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T22:03:25+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-总体心态"><a href="#1-总体心态" class="headerlink" title="1. 总体心态"></a>1. 总体心态</h2><ol>
+<li>一开始其实说到这个我是拒绝的，毕竟我前端语言不熟，HTML标签与CSS样式运用不熟练，JS也不怎么了解，该如何做好一个真正的可以拿来让人使用的正式的界面呢？很慌，但是要当作一种历练，很多不会的东西，需要经过实践才可以巩固。</li>
+<li>重要的一点是写好前端的代码可以为文献管理系统的前端打下坚实的基础。现在多搞懂几个地方，将来便可以</li>
+</ol>
+<h2 id="2-具体知识点"><a href="#2-具体知识点" class="headerlink" title="2. 具体知识点"></a>2. 具体知识点</h2><ol>
+<li><p>全局url</p>
+<p>因为为了适合第一报告厅的网络情况，我们在系统上有了两套方案，一种是设置外网，一种是设置内网，这样url会有所不同。为了方便url切换，我们在前端页面中设置了全局变量以达到效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">exports.install = <span class="function"><span class="keyword">function</span> (<span class="params">Vue, options</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//  拼接Url</span></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  Vue.prototype.Url = <span class="function"><span class="keyword">function</span> (<span class="params">last</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// const url = "http://yb.ujn.edu.cn/be/public/";</span></span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">"http://sj.ujnxgzx.com/be/public/"</span>;</span><br><span class="line">    <span class="keyword">return</span> url + last;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>向上弹出的动画效果</p>
+<p>其实这个动画效果并不难，关键是不熟……</p>
+<p>运用css内的animation达到动画效果。</p>
+<p>具体实现：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> mymove</span><br><span class="line">&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> mymove /*Safari and Chrome*/</span><br><span class="line">&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> remove &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> remove &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">top</span>: <span class="number">0</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">top</span>:<span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.items</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#F8F9FB</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">animation-direction</span>:alternate;</span><br><span class="line">  <span class="attribute">animation</span>:mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>:mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">-o-animation</span>: mymove <span class="number">0.5s</span> infinite;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">  <span class="comment">/*height: 0;*/</span></span><br><span class="line">  <span class="attribute">transition</span>: height .<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>:<span class="number">1</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">90</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">12vh</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现的是点击以后弹出的效果，结合JS的隐藏和显示。</p>
+<p>因为是使用vue组件，所以使用的是vue的方法写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">items_top: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> mychar = <span class="built_in">document</span>.getElementById(<span class="string">"ITEM"</span>);</span><br><span class="line">        <span class="keyword">let</span> k = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO"</span>);</span><br><span class="line">        <span class="keyword">let</span> k2 = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO2"</span>);</span><br><span class="line">        <span class="keyword">let</span> k3 = <span class="built_in">document</span>.getElementById(<span class="string">"HELLO3"</span>);</span><br><span class="line">        <span class="comment">// mychar.style.height = "160%";</span></span><br><span class="line">        <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (flag === <span class="literal">true</span>) &#123;</span><br><span class="line">          mychar.style.display = <span class="string">"block"</span>;</span><br><span class="line">          k.style.display = <span class="string">"none"</span>;</span><br><span class="line">          k2.style.display = <span class="string">"none"</span>;</span><br><span class="line">          k3.style.display = <span class="string">"none"</span>;</span><br><span class="line">          mychar.style.height = fullHeight;</span><br><span class="line">          flag = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">          mychar.style.display = <span class="string">"none"</span>;</span><br><span class="line">          flag = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+<p>​目的是先将细则一栏隐藏，当点击细则时将div变为block，此时触发动画，实现效果……</p>
+<p>看源码可以看出来我还隐藏了许多东西，那些是因为当界面滑至底部时点击细则不会使细则界面顶部位于当前屏幕顶部，若是打锚点实现不了效果，于是决定先隐藏上面的图片和文字，可以做到置顶效果。</p>
+</li>
+<li><p>接口连接</p>
+<ol>
+<li><p>get方法与post方法连接的区别</p>
+<p>牛学蔚学长的后台接口有两种方法，一种是post方法。连接方法需要根据接口要求传入请求头和请求参数，这里要注意语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">_this.$http.post(_this.Url(<span class="string">"grading"</span>), &#123;</span><br><span class="line">          <span class="string">'c'</span>: _this.$route.query.id,</span><br><span class="line">          <span class="string">'s'</span>: _this.score,</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">          headers: &#123;</span><br><span class="line">            <span class="string">'SJ-Code'</span>: <span class="keyword">this</span>.$route.query.invite,</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res);</span><br><span class="line">          judge = res.body.code;</span><br><span class="line">          <span class="keyword">if</span> (judge === <span class="number">1</span>) &#123;</span><br><span class="line">            alert(<span class="string">"提交成功! "</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">"请输入0~100之间的数字!"</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>以上代码为例子。post方法请求参数放在第二个，请求头放在第三个。</p>
+<p>整个前端这唯一一个post却搞了我很长时间，要注意post必须有传值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">_this.$http.get(_this.Url(<span class="string">"grading/index/confirm"</span>), &#123;<span class="attr">headers</span>: &#123;<span class="string">'SJ-Code'</span>: _this.inv&#125;&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res);</span><br><span class="line">          judge = res.body.code;</span><br><span class="line">          warn = res.body.data;</span><br><span class="line">          <span class="keyword">let</span> mymessage = confirm(<span class="string">"确认提交?提交以后不可修改!"</span>);</span><br><span class="line">          <span class="keyword">if</span> (mymessage === <span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (judge === <span class="number">0</span>) &#123;</span><br><span class="line">              alert(warn);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="built_in">window</span>.location.href = <span class="string">"#/Return?code="</span> + _this.inv;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>get方法请求头放在第二位。get方法用来获取数据，所以需要设置变量，从接口中获得数据。</p>
+</li>
+</ol>
+</li>
+<li><p>设置锚点</p>
+<ol>
+<li><p>重点是方法要好</p>
+<p>说实话这个锚点一开始真的有些折腾人。我一个早上加一个下午去寻找合适的方法，CSDN、简书、慕课，查查查，试过了KeepAlive，试过了缓存，但却是因为列表页面需要打分数据实时更新，所以缓存这个路走到最后发现根本行不通。</p>
+<p>我又尝试了记录滚动条，但是……情况不太理想。vue自带一些记录滚动条的工具，但是效果不好，没达到想要实现的效果。</p>
+<p>最后选择了使用这个方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">jump(index) &#123;</span><br><span class="line">        <span class="keyword">let</span> changeTop = <span class="built_in">document</span>.getElementById(<span class="string">'fdy'</span> + index);</span><br><span class="line">        <span class="comment">// 获取需要滚动的距离</span></span><br><span class="line">        <span class="comment">// console.log('#fdy'+index)</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"jump:"</span> + changeTop.offsetTop);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> total = changeTop.offsetTop * <span class="number">0.9</span>;</span><br><span class="line">        <span class="comment">// Chrome</span></span><br><span class="line">        <span class="built_in">document</span>.body.scrollTop = total;</span><br><span class="line">        <span class="comment">// Firefox</span></span><br><span class="line">        <span class="built_in">document</span>.documentElement.scrollTop = total;</span><br><span class="line">        <span class="comment">// Safari</span></span><br><span class="line">        <span class="built_in">window</span>.pageYOffset = total;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+<p>fdy是每个辅导员自带的id，而我们需要根据这个id来确定我们刚刚是从哪个辅导员打分界面跳转回来的。根据这个确定要跳转的位置，实现锚点。乍一看似乎就这么回事……但实际操作……确实让我这个新手很头疼。</p>
+</li>
+</ol>
+</li>
+<li><p>vue的vue-router跳转传值</p>
+<p>并不难，就是记录一下。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in candidates"</span> <span class="attr">:key</span>=<span class="string">"index"</span> @<span class="attr">click.native</span>=<span class="string">"jump(index)"</span> <span class="attr">:id</span>=<span class="string">"item.id|fdy"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;path: authority?'/Marking':'#', query: authority?&#123;id: item.id, invite: inv&#125;:&#123;code: inv&#125;&#125;"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">id</span>=<span class="string">"TRANS"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"candidate-item"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>&#123;&#123;item.name&#125;&#125;（&#123;&#123;item.school&#125;&#125;）<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>&#123;&#123;if_score(item.id, item.name)&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意语法，path接URL，query内填写你要通过URL传递的值。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/Thinkphp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/Thinkphp/" itemprop="url">Thinkphp学习历程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T21:58:29+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>php -S localhost:8888 router.php</p>
+<h2 id="1-目录结构"><a href="#1-目录结构" class="headerlink" title="1.目录结构"></a>1.目录结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tp5</span><br><span class="line">├─application     应用目录</span><br><span class="line">├─extend          扩展类库目录（可定义）</span><br><span class="line">├─public          网站对外访问目录</span><br><span class="line">├─runtime         运行时目录（可定义）</span><br><span class="line">├─vendor          第三方类库目录（Composer）</span><br><span class="line">├─thinkphp        框架核心目录</span><br><span class="line">├─build.php       自动生成定义文件（参考）</span><br><span class="line">├─composer.json   Composer定义文件</span><br><span class="line">├─LICENSE.txt     授权说明文件</span><br><span class="line">├─README.md       README 文件</span><br><span class="line">├─think           命令行工具入口</span><br></pre></td></tr></table></figure>
+<h2 id="2-核心框架"><a href="#2-核心框架" class="headerlink" title="2.核心框架"></a>2.核心框架</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">├─thinkphp 框架系统目录</span><br><span class="line">│  ├─lang               语言包目录</span><br><span class="line">│  ├─library            框架核心类库目录</span><br><span class="line">│  │  ├─think           think 类库包目录</span><br><span class="line">│  │  └─traits          系统 traits 目录</span><br><span class="line">│  ├─tpl                系统模板目录</span><br><span class="line">│  │</span><br><span class="line">│  ├─.htaccess          用于 apache 的重写</span><br><span class="line">│  ├─.travis.yml        CI 定义文件</span><br><span class="line">│  ├─base.php           框架基础文件</span><br><span class="line">│  ├─composer.json      composer 定义文件</span><br><span class="line">│  ├─console.php        控制台入口文件</span><br><span class="line">│  ├─convention.php     惯例配置文件</span><br><span class="line">│  ├─helper.php         助手函数文件（可选）</span><br><span class="line">│  ├─LICENSE.txt        授权说明文件</span><br><span class="line">│  ├─phpunit.xml        单元测试配置文件</span><br><span class="line">│  ├─README.md          README 文件</span><br><span class="line">│  └─start.php          框架引导文件</span><br></pre></td></tr></table></figure>
+<h2 id="3-命名规范"><a href="#3-命名规范" class="headerlink" title="3.命名规范"></a>3.命名规范</h2><h3 id="1-函数、类属性"><a href="#1-函数、类属性" class="headerlink" title="1. 函数、类属性"></a>1. 函数、类属性</h3><ol>
+<li>Thinkphp目录名称中只允许出现小写字母和下划线。</li>
+<li>类库函数文件名均以.php结尾。</li>
+<li>类的文件名均已命名空间定义，且命名空间和类库文件所在的路径一致。</li>
+<li>类文件采用驼峰，首字母大写，且类与为文件名保持一致；其余文件为小写+下划线命名。</li>
+<li>类名采用驼峰命名，首字母大写不需要添加后缀。</li>
+<li>函数使用驼峰命名，首字母小写，例子(getUesName)。</li>
+<li>属性名采用驼峰，首字母小写，例如(listName)。</li>
+<li>魔术方法命名前面加两个下划线 例如(__construct)。</li>
+</ol>
+<h3 id="2-常量和配置"><a href="#2-常量和配置" class="headerlink" title="2. 常量和配置"></a>2. 常量和配置</h3><ol>
+<li>常量以大写字母和下划线命名。</li>
+<li>配置参数以小写字母和下划线命名。</li>
+</ol>
+<h3 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h3><ol>
+<li>表和字段采用小写+下划线的命名方式，不能以下划线开头。</li>
+<li>应用类库的命名空间统一为app(可以配置)。</li>
+</ol>
+<h2 id="4-模块设计"><a href="#4-模块设计" class="headerlink" title="4. 模块设计"></a>4. 模块设计</h2><ol>
+<li><p>common默认作为一个公用的模块，不允许在URL上面直接访问。</p>
+<p>我们在common\controller\Index.php中写道：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">common</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> <span class="string">"This is common Index index"</span>;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>   然后在index\controller\Index.php中调用：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">index</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">use</span> <span class="title">app</span>\<span class="title">common</span>\<span class="title">controller</span>\<span class="title">Index</span> <span class="title">as</span> <span class="title">commonIndex</span>;</span><br><span class="line"></span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> <span class="string">"This is Index index index"</span>;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">common</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line"></span><br><span class="line">           $common = <span class="keyword">new</span> commonIndex();</span><br><span class="line"></span><br><span class="line">           <span class="keyword">return</span> $common-&gt;index();</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>组件的作者将配置的好的文件全都放在了里面，打开config.php就可以查看。调用的话可以使用：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">index</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line"></span><br><span class="line">          dump(config());</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="5-入口文件"><a href="#5-入口文件" class="headerlink" title="5.入口文件"></a>5.入口文件</h2><ol>
+<li>单入口文件的优势：<ol>
+<li>安全检测；</li>
+<li>请求过滤；</li>
+</ol>
+</li>
+<li>需要记住的地方：<ol>
+<li>在入口文件我们可以修改一些系统默认的配置；</li>
+<li>必须要引入start.php。</li>
+</ol>
+</li>
+</ol>
+<h2 id="6-URL和路由"><a href="#6-URL和路由" class="headerlink" title="6.URL和路由"></a>6.URL和路由</h2><ol>
+<li><p>标准的URL访问格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://domainName/index.php/模块/控制器/操作</span><br></pre></td></tr></table></figure>
+<p>我在index模块下有一个index控制器，里面有两个方法，一个是index方法，一个是hello方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">index</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'index'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span><span class="params">($name = <span class="string">'World'</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello,'</span> . $name . <span class="string">'!'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若是我在访问中URL是这么填写的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8888/index.php/index/index/index</span><br></pre></td></tr></table></figure>
+<p>想都不用想肯定会出问题的呀！</p>
+<p>如果我们直接访问入口文件的话，由于URL中没有模块、控制器和操作，因此系统会访问默认模块（index）下面的默认控制器（Index）的默认操作（index）。</p>
+<p>我这样相当于是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>所以说……</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8888/index.php/index/index/hello/name/thinkphp</span><br></pre></td></tr></table></figure>
+<p>这样就可以得到控制器的hello方法。</p>
+<p>由于name是可选参数，所以也可以省略name包括后面的，直接写成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>因为默认的URL访问是不区分大小写的，全部都会转换为小写的控制器名，除非你在应用配置文件中，设置了关闭url自动转换如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;url_convert&apos; =&gt; false,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​</p>
+</li>
+</ol>
+<h2 id="7-数据库"><a href="#7-数据库" class="headerlink" title="7.数据库"></a>7.数据库</h2><ol>
+<li><p>数据查询由低到高分为三个层次：</p>
+<ol>
+<li>数据库原生查询（SQL查询）；</li>
+<li>数据库链式查询（查询构造器）；</li>
+<li>模型的对象化查询；</li>
+</ol>
+</li>
+<li><p>查询构造器</p>
+<p>除了原生查询外，5.0还提供了数据库查询构造器，可以更方便执行数据库操作，查询构造器基于PDO实现，对不同的数据库驱动都是统一的语法。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入记录</span></span><br><span class="line">Db::table(<span class="string">'think_data'</span>)</span><br><span class="line">    -&gt;insert([<span class="string">'id'</span> =&gt; <span class="number">18</span>, <span class="string">'name'</span> =&gt; <span class="string">'thinkphp'</span>, <span class="string">'status'</span> =&gt; <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新记录</span></span><br><span class="line">Db::table(<span class="string">'think_data'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;update([<span class="string">'name'</span> =&gt; <span class="string">"hello"</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询数据</span></span><br><span class="line">$list = Db::table(<span class="string">'think_data'</span>)</span><br><span class="line">	-&gt;field(<span class="string">'name,email'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;select();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除数据</span></span><br><span class="line">Db::table(<span class="string">'think_data'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;delete();</span><br></pre></td></tr></table></figure>
+<p>增删读写，基本靠这四种语法来回使用达到目的。</p>
+<p>由于我们在数据库配置文件中设置了数据表的前缀为<code>think_</code>，因此，<code>table</code>方法可以改成<code>name</code>方法，这样就不会因为数据表前缀的修改而改动<code>CURD</code>代码，例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入记录</span></span><br><span class="line">Db::name(<span class="string">'data'</span>)</span><br><span class="line">    -&gt;insert([<span class="string">'id'</span> =&gt; <span class="number">18</span>, <span class="string">'name'</span> =&gt; <span class="string">'thinkphp'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新记录</span></span><br><span class="line">Db::name(<span class="string">'data'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;update([<span class="string">'name'</span> =&gt; <span class="string">"framework"</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询数据</span></span><br><span class="line">$list = Db::name(<span class="string">'data'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;select();</span><br><span class="line">dump($list);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除数据</span></span><br><span class="line">Db::name(<span class="string">'data'</span>)</span><br><span class="line">    -&gt;where(<span class="string">'id'</span>, <span class="number">18</span>)</span><br><span class="line">    -&gt;delete();</span><br></pre></td></tr></table></figure>
+<p>最后附上评论区大神的总结：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Db::(<span class="string">'表'</span>)</span><br><span class="line">-&gt;where(<span class="string">'列'</span>,<span class="string">'比较符'</span>,<span class="string">'值'</span>)</span><br><span class="line">-&gt;insert([列=&gt;值...])</span><br><span class="line">-&gt;delete()</span><br><span class="line">-&gt;update(列=&gt;值...)</span><br><span class="line">-&gt;select()</span><br></pre></td></tr></table></figure>
+<p>算了……还是先学学查询表达式吧……</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ol>
+<h2 id="8-查询表达式"><a href="#8-查询表达式" class="headerlink" title="8.查询表达式"></a>8.查询表达式</h2><ol>
+<li>查询表达式如下：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EQ、=</td>
+<td>等于（=）</td>
+</tr>
+<tr>
+<td>NEQ、&lt;&gt;</td>
+<td>不等于（&lt;&gt;）</td>
+</tr>
+<tr>
+<td>GT、&gt;</td>
+<td>大于（&gt;）</td>
+</tr>
+<tr>
+<td>EGT、&gt;=</td>
+<td>大于等于（&gt;=）</td>
+</tr>
+<tr>
+<td>LT、&lt;</td>
+<td>小于（&lt;）</td>
+</tr>
+<tr>
+<td>ELT、&lt;=</td>
+<td>小于等于（&lt;=）</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td>模糊查询</td>
+</tr>
+<tr>
+<td>[NOT] BETWEEN</td>
+<td>（不在）区间查询</td>
+</tr>
+<tr>
+<td>[NOT] IN</td>
+<td>（不在）IN 查询</td>
+</tr>
+<tr>
+<td>[NOT] NULL</td>
+<td>查询字段是否（不）是NULL</td>
+</tr>
+<tr>
+<td>[NOT] EXISTS</td>
+<td>EXISTS查询</td>
+</tr>
+<tr>
+<td>EXP</td>
+<td>表达式查询，支持SQL语法</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>​</li>
+</ol>
 
           
         
@@ -915,7 +1498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
