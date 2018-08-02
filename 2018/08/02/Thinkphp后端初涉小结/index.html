@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##后端总结 ###1.token产生与验证  产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; Gl">
+<meta name="description" content="后端总结1.token产生与验证 产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; GlobalVar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="献文帝后端（thinkphp）总结">
-<meta property="og:url" content="http://yoursite.com/2018/07/11/献文帝后端（thinkphp）总结/index.html">
+<meta property="og:title" content="Thinkphp后端初涉小结">
+<meta property="og:url" content="http://yoursite.com/2018/08/02/Thinkphp后端初涉小结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##后端总结 ###1.token产生与验证  产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; Gl">
+<meta property="og:description" content="后端总结1.token产生与验证 产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; GlobalVar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T11:59:44.923Z">
+<meta property="og:updated_time" content="2018-08-02T12:02:06.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="献文帝后端（thinkphp）总结">
-<meta name="twitter:description" content="##后端总结 ###1.token产生与验证  产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; Gl">
+<meta name="twitter:title" content="Thinkphp后端初涉小结">
+<meta name="twitter:description" content="后端总结1.token产生与验证 产生 1$token = Request::instance()-&amp;gt;token(); 通过引入Request并引用token()来生成随机token，然后 123456789$array = [               &apos;user_id&apos; =&amp;gt; $data[&apos;user_id&apos;],               &apos;ip&apos; =&amp;gt; GlobalVar">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/11/献文帝后端（thinkphp）总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/02/Thinkphp后端初涉小结/"/>
 
 
 
 
 
-  <title>献文帝后端（thinkphp）总结 | Hexo</title>
+  <title>Thinkphp后端初涉小结 | Hexo</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/献文帝后端（thinkphp）总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/02/Thinkphp后端初涉小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">献文帝后端（thinkphp）总结</h1>
+          <h1 class="post-title" itemprop="name headline">Thinkphp后端初涉小结</h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T16:39:34+08:00">
-                2018-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T20:01:42+08:00">
+                2018-08-02
               </time>
             
 
@@ -369,9 +369,7 @@
       
 
       
-        <p>##后端总结</p>
-<p>###1.token产生与验证</p>
-<ol>
+        <h2 id="后端总结"><a href="#后端总结" class="headerlink" title="后端总结"></a>后端总结</h2><h3 id="1-token产生与验证"><a href="#1-token产生与验证" class="headerlink" title="1.token产生与验证"></a>1.token产生与验证</h3><ol>
 <li><p>产生</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$token = Request::instance()-&gt;token();</span><br></pre></td></tr></table></figure>
 <p>通过引入Request并引用token()来生成随机token，然后</p>
@@ -384,8 +382,7 @@
 <p>通过前端请求头传来用户登录的token，进入数据库进行验证，若是存在取出对应那一条数据，判断expire_time是否过期来判定是否过期。若是没过期，进行接下来的方法。</p>
 </li>
 </ol>
-<p>###2.密码加盐</p>
-<ol>
+<h3 id="2-密码加盐"><a href="#2-密码加盐" class="headerlink" title="2.密码加盐"></a>2.密码加盐</h3><ol>
 <li><p>盐的产生</p>
 <p>在注册的时候随机生成一个字符串：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">CreateSalt</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $str = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'</span>;</span><br><span class="line">        $randStr = str_shuffle($str);<span class="comment">//打乱字符串</span></span><br><span class="line">        $salt = substr($randStr, <span class="number">0</span>, <span class="number">6</span>);<span class="comment">//substr(string,start,length);返回字符串的一部分</span></span><br><span class="line">        <span class="keyword">return</span> $salt;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -409,8 +406,7 @@
 <pre><code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">updatePwd</span><span class="params">($original, $change)</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       settype($original, <span class="string">'string'</span>);</span><br><span class="line">       settype($change, <span class="string">'string'</span>);</span><br><span class="line">       $userid = Db::table(<span class="string">'table'</span>)-&gt;where([<span class="string">'token'</span> =&gt; Request::instance()-&gt;header(<span class="string">'token'</span>)])-&gt;find();</span><br><span class="line">       $userData = Db::table(<span class="string">'table'</span>)-&gt;where(<span class="string">'user_id'</span>, json_encode($userid[<span class="string">'user_id'</span>]))-&gt;find();</span><br><span class="line">       $salt = $userData[<span class="string">'salt'</span>];</span><br><span class="line">       <span class="keyword">if</span> ($userData[<span class="string">'password'</span>] == md5($original . $salt)) &#123;</span><br><span class="line">           <span class="keyword">if</span> (strlen($change) &lt; <span class="number">6</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> GlobalVariable::promptErrorByJSON(<span class="string">"错误"</span>, <span class="number">406</span>, <span class="string">"密码应大于六位！"</span>);</span><br><span class="line">           &#125;</span><br><span class="line">           Db::table(<span class="string">'table'</span>)-&gt;where(<span class="string">'user_id'</span>, json_encode($userid[<span class="string">'user_id'</span>]))-&gt;update([<span class="string">'password'</span> =&gt; md5($change . $salt)]);</span><br><span class="line">           <span class="keyword">return</span> GlobalVariable::promptOkStatus();</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> GlobalVariable::promptErrorByJSON(<span class="string">"错误"</span>, <span class="number">401</span>, <span class="string">"原密码错误!"</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 大体原理差不多，我这里记录一下方便以后遇到同样需求以便参考。
-</code></pre><p>###3.用户注销</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">doLogout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $token = Request::instance()-&gt;header(<span class="string">'token'</span>);</span><br><span class="line">        $select = Db::name(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;find();</span><br><span class="line">        $in_time = $select[<span class="string">"in_time"</span>];</span><br><span class="line">        $out_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line">        $in_time_s = strtotime($in_time);</span><br><span class="line">        $out_time_s = strtotime($out_time);</span><br><span class="line">        $time_long = $out_time_s - $in_time_s;</span><br><span class="line">        Db::table(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;update([<span class="string">'out_time'</span> =&gt; $out_time, <span class="string">'time_long'</span> =&gt; $time_long, <span class="string">'out_c'</span> =&gt; $out_time_s]);</span><br><span class="line">        Session::clear(<span class="string">'xwd_user'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-用户注销"><a href="#3-用户注销" class="headerlink" title="3.用户注销"></a>3.用户注销</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">doLogout</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $token = Request::instance()-&gt;header(<span class="string">'token'</span>);</span><br><span class="line">        $select = Db::name(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;find();</span><br><span class="line">        $in_time = $select[<span class="string">"in_time"</span>];</span><br><span class="line">        $out_time = date(<span class="string">'Y-m-d H:i:s'</span>);</span><br><span class="line">        $in_time_s = strtotime($in_time);</span><br><span class="line">        $out_time_s = strtotime($out_time);</span><br><span class="line">        $time_long = $out_time_s - $in_time_s;</span><br><span class="line">        Db::table(<span class="string">'table'</span>)-&gt;where(<span class="string">'token'</span>, $token)-&gt;update([<span class="string">'out_time'</span> =&gt; $out_time, <span class="string">'time_long'</span> =&gt; $time_long, <span class="string">'out_c'</span> =&gt; $out_time_s]);</span><br><span class="line">        Session::clear(<span class="string">'xwd_user'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>主要是为了方便统计，记录了时间戳也记录了标准的时间。</p>
 
       
@@ -436,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/08/01/Hbase对比Mongodb/" rel="next" title="Hbase对比Mongodb">
+                <i class="fa fa-chevron-left"></i> Hbase对比Mongodb
               </a>
             
           </div>
@@ -445,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/01/Hbase对比Mongodb/" rel="prev" title="Hbase对比Mongodb">
-                Hbase对比Mongodb <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -543,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#后端总结"><span class="nav-number">1.</span> <span class="nav-text">后端总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-token产生与验证"><span class="nav-number">1.1.</span> <span class="nav-text">1.token产生与验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-密码加盐"><span class="nav-number">1.2.</span> <span class="nav-text">2.密码加盐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-用户注销"><span class="nav-number">1.3.</span> <span class="nav-text">3.用户注销</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
